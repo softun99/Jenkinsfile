@@ -1,0 +1,32 @@
+Pipeline{
+  agent any
+  tools {
+    maven "3.8.6"
+  }
+  stage('1cloning'){
+    steps {
+      git "https://github.com/tunji22/maven-web-application.git "
+    }
+ }
+  stage('2TestBuild'){
+    steps{
+      sh  "mvn clean install"
+    }
+}
+stage('3CodeQuality'){
+    steps{
+      sh  "mvn sonar:sonar"
+    }
+}
+stage('4UploadNexus'){
+    steps{
+      sh  "mvn deploy"
+    }
+}
+stage('5DeployTomcat'){
+    steps{
+      
+    }
+}
+
+}
