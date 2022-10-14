@@ -31,7 +31,7 @@ def mavenHome = tool name: "maven3.8.6"
     {
 emailext body: '''
 Build Status
-Landmark Technology
+L Technology
 + 2819036134\'\'\', recipientProviders: [developers()], subject: \'Build status\', to: \'sofelaolatunji@gmail.com\'''', recipientProviders: [developers()], subject: 'Build', to: 'sofelaolatunji@gmail.com'
     }
 }
